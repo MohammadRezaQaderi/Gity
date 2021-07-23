@@ -1,0 +1,117 @@
+https://gradeup.co/iiit-hyderabad-practice-quiz-operating-system-3-i-7bcb9240-7cd1-11eb-980f-4ceaee8c6ee9
+
+
+
+
+
+// #include <stdio.h>
+// #include <pthread.h>
+// #include<stdlib.h>
+// #include<sys/wait.h>
+// #include<unistd.h>
+
+// int main(int argc , char** argv)
+// {
+//     if(0){printf("sdasdasda");}    
+//     for (int i = 1; i < 6; ++i) {
+//         if(fork() == 0){
+//             ++i;
+//             printf("%d" , i);
+//             fflush(stdout);
+//         }else{
+//             wait(NULL);
+//             return 0;
+//         }
+//     }
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <sys/types.h>
+// #include <sys/wait.h>
+// #include <unistd.h>
+ 
+// int main(void) {
+//   pid_t pid = fork();
+ 
+//   if(pid == 0) {
+//     printf("Child => PPID: %d PID: %d\n", getppid(), getpid());
+//     exit(EXIT_SUCCESS);
+//   }
+//   else if(pid > 0) {
+//     printf("Parent => PID: %d\n", getpid());
+//     printf("Waiting for child process to finish.\n");
+//     wait(NULL);
+//     printf("Child process finished.\n");
+//   }
+//   else {
+//     printf("Unable to create child process.\n");
+//   }
+ 
+//   return EXIT_SUCCESS;
+// }
+
+#include <unistd.h>
+#include <sys/types.h>
+#include <errno.h>
+#include <stdio.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+
+// int var_glb; /* A global variable*/
+
+// int main(void)
+// {
+//     pid_t childPID;
+//     int var_lcl = 0;
+
+//     childPID = fork();
+
+//     if(childPID >= 0) // fork was successful
+//     {
+//         if(childPID == 0) // child process
+//         {
+//             var_lcl++;
+//             var_glb++;
+//             printf("\n Child Process :: var_lcl = [%d], var_glb[%d]\n", var_lcl, var_glb);
+//         }
+//         else //Parent process
+//         {
+//             var_lcl = 10;
+//             var_glb = 20;
+//             printf("\n Parent process :: var_lcl = [%d], var_glb[%d]\n", var_lcl, var_glb);
+//         }
+//     }
+//     else // fork failed
+//     {
+//         printf("\n Fork failed, quitting!!!!!!\n");
+//         return 1;
+//     }
+
+//     return 0;
+// }
+int main(){
+    int child = fork();
+int c = 5;
+if (child == 0) {
+c += 5;
+} else {
+child = fork();
+c += 10;
+if (child) {
+c += 10;
+printf("%d" , c);
+return 0; 
+    
+}
+    
+}
+}
+
+
+
+
+
+https://www.modernescpp.com/index.php/semaphores-in-c-20
+https://www.cplusplus.com/reference/mutex/mutex/

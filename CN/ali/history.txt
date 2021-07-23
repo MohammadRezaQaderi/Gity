@@ -1,0 +1,6 @@
+makerepo  The Repository name : aliz repo
+makerepo  The Repository name : akak
+pull mmm akak\jobs.txt  Pull the : akak\jobs.txt
+commit&push xxxx OS.txt  Commit the xxxx and push the : OS.txt
+commit&push lalaland names.txt  Commit the lalaland and push the : names.txt
+pull mmmm akak\jobs.txt  Pull the : akak\jobs.txt
